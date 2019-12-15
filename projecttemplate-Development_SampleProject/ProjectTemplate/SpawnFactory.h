@@ -6,6 +6,7 @@ class SpawnFactory : public Component
 	DECLARE_DYNAMIC_DERIVED_CLASS(SpawnFactory, Component)
 
 public:
+	std::string prefabGUID;
 	float moveSpeed = 50;
 	float time = 0;
 	sf::Vector2f mousePos;

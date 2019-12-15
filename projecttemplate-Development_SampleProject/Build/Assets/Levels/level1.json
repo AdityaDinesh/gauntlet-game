@@ -53,7 +53,8 @@
         },
         {
           "class": "Player",
-          "moveSpeed": 150.0
+          "moveSpeed": 150.0,
+          "prefabGUID":"04127430-547d-4db3-936b-666e63665eae"
         }
       ]
     },
@@ -102,7 +103,8 @@
           }
         },
         {
-          "class": "SpawnFactory"
+          "class": "SpawnFactory",
+          "prefabGUID":"804f8df5-aa93-4209-950c-c39b3f2f1ece"
         }
       ]
     },

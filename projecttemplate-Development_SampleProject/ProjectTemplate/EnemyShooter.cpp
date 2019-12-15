@@ -28,6 +28,7 @@ void EnemyShooter::update(float deltaTime)
 		return;
 	}
 
+	time += deltaTime;
 	sf::Vector2f moveOffset(0, 0);
 	sf::Vector2f playerPos(0, 0);
 	sf::Vector2f enemyPos = getGameObject()->getTransform()->getPosition();
@@ -56,6 +57,13 @@ void EnemyShooter::update(float deltaTime)
 		moveOffset.x += moveSpeed * deltaTime;
 	}
 
+	if (time > 4)
+	{
+		PrefabAsset* prefabTest = (PrefabAsset*)AssetManager::instance().GetAssetByGUID("804f8df5-aa93-4209-950c-c39b3f2f1ece");
+		GameObject* enemy = GameObjectManager::instance().instantiatePrefab(prefabTest->getID());
+		enemy->getTransform()->setPosition(getGameObject()->getTransform()->getPosition());
+		time = 0;
+	}
 	getGameObject()->getTransform()->translate(moveOffset);
 	
 }
