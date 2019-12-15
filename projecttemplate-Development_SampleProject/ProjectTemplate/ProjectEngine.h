@@ -15,6 +15,7 @@ class Player;
 class Enemy;
 class Projectile;
 class SpawnFactory;
+class EnemyShooter;
 class ProjectEngine final : public ISystem
 {
 public:
@@ -23,6 +24,7 @@ public:
 	Enemy* enemyScript = nullptr;
 	Projectile* projectileScript = nullptr;
 	SpawnFactory* spawnFactoryScript = nullptr;
+	EnemyShooter* enemyShooterScript = nullptr;
 	std::string levelFile = "../Assets/Levels/level1.json";
 	bool loaded = false;
     void initialize() override;
@@ -31,6 +33,7 @@ public:
 	void setEnemy(Enemy* _enemy) { enemyScript = _enemy; }
 	void setProjectile(Projectile* _projectile) { projectileScript = _projectile; }
 	void setSpawnFactory(SpawnFactory* _spawnfactory) { spawnFactoryScript = _spawnfactory; }
+	void setEnemyShooter(EnemyShooter* _enemyShooter) { enemyShooterScript = _enemyShooter; }
     DECLARE_SINGLETON(ProjectEngine)
 };
 
