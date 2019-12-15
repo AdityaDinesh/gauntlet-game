@@ -1,0 +1,250 @@
+{
+  "resources": [
+    "../Assets/Images/Dungeon.png.meta",
+    "../Assets/Images/Witch.png.meta",
+    "../Assets/Images/Ghost.png.meta",
+    "../Assets/Prefabs/Projectile.meta",
+    "../Assets/Prefabs/Enemy.meta"
+  ],
+  "GameObjects": [
+    {
+      "name": "Player",
+      "enabled": true,
+      "destroyOnUnload": true,
+      "Components": [
+        {
+          "class": "Transform",
+          "Position": {
+            "X": 250.0,
+            "Y": 250.0
+          },
+          "Scale": {
+            "X": 1,
+            "Y": 1
+          }
+        },
+        {
+          "class": "Sprite",
+          "enabled": true,
+          "Texture": {
+            "textureAssetGUID": "04127430-547d-4db3-936b-666e63665eaa"
+          },
+          "Dimensions": {
+            "Left": 512,
+            "Top": 128,
+            "Width": 64,
+            "Height": 64
+          }
+        },
+        {
+          "class": "RigidBody",
+          "BodyType": 1
+        },
+        {
+          "class": "CircleCollider",
+          "enabled": true,
+          "radius": 32.0,
+          "trigger": false,
+          "fixture": {
+            "density": 0,
+            "friction": 0,
+            "restitution": 0
+          }
+        },
+        {
+          "class": "Player",
+          "moveSpeed": 150.0
+        }
+      ]
+    },
+    {
+      "name": "Ghost Spawner",
+      "enabled": true,
+      "destroyOnUnload": true,
+      "Components": [
+        {
+          "class": "Transform",
+          "Position": {
+            "X": 500.0,
+            "Y": 500.0
+          },
+          "Scale": {
+            "X": 1,
+            "Y": 1
+          }
+        },
+        {
+          "class": "Sprite",
+          "enabled": true,
+          "Texture": {
+            "textureAssetGUID": "5651edc5-61a2-4e2d-8c52-fb04ca66564d"
+          },
+          "Dimensions": {
+            "Left": 384,
+            "Top": 0,
+            "Width": 64,
+            "Height": 64
+          }
+        },
+        {
+          "class": "RigidBody",
+          "BodyType": 1
+        },
+        {
+          "class": "CircleCollider",
+          "enabled": true,
+          "radius": 32.0,
+          "trigger": false,
+          "fixture": {
+            "density": 0,
+            "friction": 0,
+            "restitution": 0
+          }
+        },
+        {
+          "class": "SpawnFactory"
+        }
+      ]
+    },
+    {
+      "name": "Wall1",
+      "enabled": true,
+      "destroyOnUnload": true,
+      "Components": [
+        {
+          "class": "Transform",
+          "Position": {
+            "X": 500.0,
+            "Y": 500.0
+          },
+          "Scale": {
+            "X": 1,
+            "Y": 1
+          }
+        },
+        {
+          "class": "Sprite",
+          "enabled": true,
+          "Texture": {
+            "textureAssetGUID": "5651edc5-61a2-4e2d-8c52-fb04ca66564d"
+          },
+          "Dimensions": {
+            "Left": 256,
+            "Top": 64,
+            "Width": 64,
+            "Height": 64
+          }
+        },
+        {
+          "class": "PolygonCollider",
+          "enabled": true,
+          "box": {
+            "height": 64.0,
+            "width": 64.0
+          },
+          "trigger": false,
+          "fixture": {
+            "density": 0,
+            "friction": 0,
+            "restitution": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wall2",
+      "enabled": true,
+      "destroyOnUnload": true,
+      "Components": [
+        {
+          "class": "Transform",
+          "Position": {
+            "X": 750.0,
+            "Y": 900.0
+          },
+          "Scale": {
+            "X": 1,
+            "Y": 1
+          }
+        },
+        {
+          "class": "Sprite",
+          "enabled": true,
+          "Texture": {
+            "textureAssetGUID": "5651edc5-61a2-4e2d-8c52-fb04ca66564d"
+          },
+          "Dimensions": {
+            "Left": 0,
+            "Top": 128,
+            "Width": 64,
+            "Height": 64
+          }
+        },
+        {
+          "class": "PolygonCollider",
+          "enabled": true,
+          "box": {
+            "height": 64.0,
+            "width": 64.0
+          },
+          "trigger": false,
+          "fixture": {
+            "density": 0,
+            "friction": 0,
+            "restitution": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "FinalPosition",
+      "enabled": true,
+      "destroyOnUnload": true,
+      "Components": [
+        {
+          "class": "Transform",
+          "Position": {
+            "X": 200.0,
+            "Y": 600.0
+          },
+          "Scale": {
+            "X": 1,
+            "Y": 1
+          }
+        },
+        {
+          "class": "Sprite",
+          "enabled": true,
+          "Texture": {
+            "textureAssetGUID": "5651edc5-61a2-4e2d-8c52-fb04ca66564d"
+          },
+          "Dimensions": {
+            "Left": 256,
+            "Top": 0,
+            "Width": 64,
+            "Height": 64
+          }
+        },
+        {
+          "class": "CircleCollider",
+          "enabled": true,
+          "radius": 32.0,
+          "trigger": true,
+          "fixture": {
+            "density": 0,
+            "friction": 0,
+            "restitution": 0
+          }
+        },
+        {
+          "class": "Text",
+          "enabled": false,
+          "FontGUID": "f24b59b9-8531-4c95-89c3-043b3b738969",
+          "String": "You Win!",
+          "Character Size": 10,
+          "Fill Color": "Green"
+        }
+      ]
+    }
+  ]
+}
