@@ -42,6 +42,12 @@
     <ClCompile Include="EnemyShooter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCore.h">
@@ -63,6 +69,12 @@
       <Filter>Header Files\Game Components</Filter>
     </ClInclude>
     <ClInclude Include="EnemyShooter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,53 @@
+{
+    "name": "Enemy",
+    "destroyOnUnload": true,
+    "Components": [
+        {
+            "class": "Transform",
+            "Position": {
+                "X": 100.0,
+                "Y": 100.0
+            },
+            "Scale": {
+                "X": 1,
+                "Y": 1
+            }
+        },
+        {
+            "class": "Sprite",
+            "enabled": true,
+            "Texture": {
+                "textureAssetGUID": "e7dad3815e355ed48b28df2c2b9b7bd5"
+            },
+            "Dimensions": {
+                "Top": 128,
+                "Left": 0,
+                "Width": 64,
+                "Height": 64
+            },
+            "Layer": 2
+        },
+        {
+            "class": "PolygonCollider",
+            "enabled": true,
+            "box": {
+                "height": 64.0,
+                "width": 64.0
+            },
+            "trigger": false,
+            "fixture": {
+                "density": 0,
+                "friction": 0,
+                "restitution": 0
+            }
+        },
+        {
+          "class":"Enemy",
+          "moveSpeed":50.0
+        },
+        {
+            "class": "RigidBody",
+            "BodyType": 1
+        }
+    ]
+}

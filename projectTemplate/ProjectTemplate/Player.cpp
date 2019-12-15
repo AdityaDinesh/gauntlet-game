@@ -32,6 +32,11 @@ void Player::update(float deltaTime)
 		return;
 	}
 
+	if (InputManager::instance().getKeyState(sf::Keyboard::Tilde) == InputManager::PushState::Up)
+	{
+		ProjectEngine::instance().pauseMenu();
+	}
+
 	sf::Vector2f moveOffset(0, 0);
 
 	if (InputManager::instance().getKeyState(sf::Keyboard::Down) == InputManager::PushState::Held)
@@ -92,5 +97,13 @@ void Player::onTriggerEnter(const Collision* const collisionData)
 	}
 
 	collisionData->colliders[otherColliderIx]->getGameObject()->getComponent("Text")->setEnabled(true);
+
+
+	std::string lvl2 = "../Assets/Levels/level2.json";
+	std::string lvl1 = "../Assets/Levels/level1.json";
+
+	FileSystem::instance().load(lvl2, true);
+	FileSystem::instance().unload(lvl1);
+	RenderSystem::instance().renderText(0.0, true);
 	win = true;
 }

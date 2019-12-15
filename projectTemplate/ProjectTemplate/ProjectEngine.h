@@ -15,25 +15,42 @@ class Player;
 class Enemy;
 class Projectile;
 class SpawnFactory;
+class ShootEnemy;
 class EnemyShooter;
 class ProjectEngine final : public ISystem
 {
-public:
-
 	Player* playerScript = nullptr;
 	Enemy* enemyScript = nullptr;
 	Projectile* projectileScript = nullptr;
-	SpawnFactory* spawnFactoryScript = nullptr;
-	EnemyShooter* enemyShooterScript = nullptr;
+	SpawnFactory* spawnFactory = nullptr;
+	ShootEnemy* shootEnemy = nullptr;
+	EnemyShooter* enemyShooter = nullptr;
+
+
 	std::string levelFile = "../Assets/Levels/level1.json";
+	std::string levelFile2 = "../Assets/Levels/level2.json";
+
 	bool loaded = false;
+	sf::RenderWindow mainMenuWindow;
+	sf::RenderWindow pauseWindow;
+
+public:
     void initialize() override;
     void update(float deltaTime)override;
 	void setPlayer(Player* _player) { playerScript = _player; }
+	void mainMenu();
+	void pauseMenu();
+	void closePauseMenu();
+	void closeMainMenu();
+
 	void setEnemy(Enemy* _enemy) { enemyScript = _enemy; }
 	void setProjectile(Projectile* _projectile) { projectileScript = _projectile; }
-	void setSpawnFactory(SpawnFactory* _spawnfactory) { spawnFactoryScript = _spawnfactory; }
-	void setEnemyShooter(EnemyShooter* _enemyShooter) { enemyShooterScript = _enemyShooter; }
+	void setSpawnFactory(SpawnFactory* _spawnFactory) { spawnFactory = _spawnFactory; }
+	void setShootEnemy(ShootEnemy* _shootEnemy) { shootEnemy = _shootEnemy; }
+	void setEnemyShooter(EnemyShooter* _enemyShooter) { enemyShooter = _enemyShooter; }
+
+
+
     DECLARE_SINGLETON(ProjectEngine)
 };
 

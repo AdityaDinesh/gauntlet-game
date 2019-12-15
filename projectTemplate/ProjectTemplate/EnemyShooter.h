@@ -6,6 +6,7 @@ class EnemyShooter : public Component
 	DECLARE_DYNAMIC_DERIVED_CLASS(EnemyShooter, Component)
 
 public:
+	std::string prefabGUID;
 	float moveSpeed = 50;
 	float time = 0;
 	sf::Vector2f mousePos;

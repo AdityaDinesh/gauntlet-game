@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyShooter.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,8 +174,10 @@
     <ClCompile Include="ProjectEngine.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="SpawnFactory.cpp" />
+    <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyShooter.h" />
     <ClInclude Include="GameCore.h" />
@@ -182,6 +185,7 @@
     <ClInclude Include="ProjectEngine.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="SpawnFactory.h" />
+    <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

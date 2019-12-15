@@ -59,7 +59,7 @@ void EnemyShooter::update(float deltaTime)
 
 	if (time > 4)
 	{
-		PrefabAsset* prefabTest = (PrefabAsset*)AssetManager::instance().GetAssetByGUID("804f8df5-aa93-4209-950c-c39b3f2f1ece");
+		PrefabAsset* prefabTest = (PrefabAsset*)AssetManager::instance().GetAssetByGUID(prefabGUID);
 		GameObject* enemy = GameObjectManager::instance().instantiatePrefab(prefabTest->getID());
 		enemy->getTransform()->setPosition(getGameObject()->getTransform()->getPosition());
 		time = 0;
@@ -74,6 +74,10 @@ void EnemyShooter::load(json::JSON& node)
 	if (node.hasKey("moveSpeed"))
 	{
 		moveSpeed = node["moveSpeed"].ToFloat();
+	}
+	if (node.hasKey("prefabGUID"))
+	{
+		prefabGUID = node["prefabGUID"].ToString();
 	}
 }
 
